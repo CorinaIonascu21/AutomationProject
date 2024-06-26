@@ -18,4 +18,19 @@ public class SimpleElements {
         return driver.findElement(By.className("loginPageID"));
 
     }
+    public WebElement loginButton(){
+        return driver.findElement(By.className("submitButton"));
+    }
+    public WebElement emailInput(){
+        return driver.findElement(By.id("userEmail"));
+    }
+    public WebElement passwordInput(){
+        return driver.findElement(By.id("userPassword"));
+    }
+    public WebElement loginErrorMessage(){
+        return driver.findElement(By.className("errorForbiddenAccess"));
+    }
+    public WebElement userNameAfterLogin(){
+        return driver.findElement(By.className("userName"));
+    }
 }
