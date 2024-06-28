@@ -11,11 +11,10 @@ public class LoginElements {
 
     }
     public WebElement registerButton() {
-        WebElement registerButton = driver.findElement(By.className("register"));
-        return registerButton;
+        return driver.findElement(By.className("register"));
     }
     public WebElement loginText() {
-        return driver.findElement(By.xpath("//h2"));
+        return driver.findElement(By.xpath("//h2"));// h2 este un locator
 
     }
     public WebElement emailInput(){
@@ -26,5 +25,8 @@ public class LoginElements {
     }
     public WebElement  loginButtonInput() {
         return driver.findElement(By.id("submitButton"));
+    }
+    public WebElement errorForbiddenAccess() {
+        return driver.findElement(By.cssSelector("errorForbiddenAccess"));
     }
 }

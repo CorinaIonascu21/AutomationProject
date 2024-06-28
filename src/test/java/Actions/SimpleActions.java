@@ -7,9 +7,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import javax.sql.rowset.WebRowSet;
-import java.time.Duration;
-
 import java.time.Duration;
 
 public class SimpleActions {

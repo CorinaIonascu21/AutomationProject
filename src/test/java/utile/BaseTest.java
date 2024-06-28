@@ -30,14 +30,15 @@ public class BaseTest {
 
         driver = new ChromeDriver();//apelam instanta. iar aici driver devine true si dupa cand intra in if trb sa inchida
         screenshotUtils = new ScreenshotUtils(driver);
+        driver.get("http://apptest.go.ro:9999/login");
     }
 
-   /*  @AfterClass
+    @AfterClass
    public void tearDown() {//facem o alta metoda care sa inchida mereu dupa noi
         if (driver != null) {
 driver.quit();
         }
-   }*/
+   }
 
     @AfterMethod
     public void afterMethod(ITestResult result) throws IOException {

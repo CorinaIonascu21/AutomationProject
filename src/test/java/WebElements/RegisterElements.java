@@ -12,32 +12,45 @@ public class RegisterElements {
 
     }
 
-    public WebElement singUpText() {
+    public WebElement singUpText() {//metoda returneaza un web element ce nu are parametru de intrare
+        //si acesta e un body si logica ce o face
         return driver.findElement(By.xpath("//h2"));
     }
-    public WebElement firstName(){
+
+    public WebElement firstName() {
         return driver.findElement(By.cssSelector("#firstName"));
     }
-    public WebElement lasName(){
+
+    public WebElement lasName() {
         return driver.findElement(By.cssSelector("#lastName"));
     }
-    public WebElement phoneNumber(){
+
+    public WebElement phoneNumber() {
         return driver.findElement(By.cssSelector("#phoneNumber"));
     }
-    public WebElement email(){
+
+    public WebElement email() {
         return driver.findElement(By.cssSelector("#email"));
     }
-    public WebElement password(){
+
+    public WebElement password() {
         return driver.findElement(By.cssSelector("#password"));
     }
-    public WebElement city(){
+
+    public WebElement city() {
         return driver.findElement(By.cssSelector("#city"));
     }
-    public WebElement customer(){
+
+    public WebElement customer() {
         return driver.findElement(By.cssSelector("#customer"));
 
     }
-    public WebElement submit(){
+
+    public WebElement trainer() {
+        return driver.findElement(By.cssSelector("#trainer"));
+    }
+
+    public WebElement submit() {
         return driver.findElement(By.cssSelector("#submit"));
     }
 }
