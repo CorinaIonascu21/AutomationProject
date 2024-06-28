@@ -43,6 +43,7 @@ public class TrainingProgram extends BaseTest {
 
         training.clickGenerateProgramButton();
 
+
     }
 }
 
