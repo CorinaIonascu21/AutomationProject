@@ -22,6 +22,7 @@ public class Dashboard {
         wait.until(d-> elements.userNameDisplay().isDisplayed());
         return  elements.userNameDisplay().getText();
     }
+
     public void clickTrainingButton(){
         wait.until(d-> elements.trainingButton().isDisplayed());
         elements.trainingButton().click();

@@ -35,8 +35,6 @@ public class LoginTrainer extends BaseTest {
             register.registerUser(true);
         }
 
-
-
         Assert.assertTrue(dashboard.getUserEmailFromDashBoard().equalsIgnoreCase(Email));
     }
 }
