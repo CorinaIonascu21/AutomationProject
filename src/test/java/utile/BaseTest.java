@@ -12,6 +12,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
+import utile.BaseTest;
 
 import java.io.File;
 import java.io.IOException;
@@ -21,24 +22,27 @@ public class BaseTest {
     public WebDriver driver;//aici e null, driver e un obiect dintr-o clasa
     private ExtentTest extentTest;
     private ScreenshotUtils screenshotUtils;
+    private ConfigLoader configLoader;
 
     @BeforeClass//inainte sa fie rulata o clasa din proiect intra in metoda asta si face initializarile
     public void setupClass() {
+        configLoader = new ConfigLoader("src/test/resources/proprietati/dateUser1.properties");
+        String appPath = configLoader.getProperty("appUrl");
         WebDriverManager.chromedriver().setup();//am facut instanta de wbdrivermanager,
         //se numeste apelare in cascada
         // apelare pentru o clasa statica si apeleaza 2 metode
 
         driver = new ChromeDriver();//apelam instanta. iar aici driver devine true si dupa cand intra in if trb sa inchida
         screenshotUtils = new ScreenshotUtils(driver);
-        driver.get("http://apptest.go.ro:9999/login");
+        driver.get(appPath);
     }
 
-    @AfterClass
+   /* @AfterClass
    public void tearDown() {//facem o alta metoda care sa inchida mereu dupa noi
         if (driver != null) {
-driver.quit();
+            driver.quit();
         }
-   }
+   }*/
 
     @AfterMethod
     public void afterMethod(ITestResult result) throws IOException {

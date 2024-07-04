@@ -12,45 +12,56 @@ public class RegisterElements {
 
     }
 
-    public WebElement singUpText() {//metoda returneaza un web element ce nu are parametru de intrare
-        //si acesta e un body si logica ce o face
-        return driver.findElement(By.xpath("//h2"));
-    }
 
     public WebElement firstName() {
-        return driver.findElement(By.cssSelector("#firstName"));
+        return driver.findElement(By.id("customer.firstName"));
     }
 
     public WebElement lasName() {
-        return driver.findElement(By.cssSelector("#lastName"));
+        return driver.findElement(By.id("customer.lastName"));
     }
+
+    public WebElement address() {
+        return driver.findElement(By.id("customer.address.street"));
+    }
+    public WebElement city() {
+        return driver.findElement(By.id("customer.address.city"));
+    }
+
+    public WebElement state() {
+        return driver.findElement(By.id("customer.address.state"));
+    }
+
+    public WebElement zipCode() {
+        return driver.findElement(By.id("customer.address.zipCode"));
+    }
+
 
     public WebElement phoneNumber() {
-        return driver.findElement(By.cssSelector("#phoneNumber"));
+        return driver.findElement(By.id("customer.phoneNumber"));
+
     }
 
-    public WebElement email() {
-        return driver.findElement(By.cssSelector("#email"));
+    public WebElement ssn() {
+        return driver.findElement(By.id("customer.ssn"));
     }
 
+    public WebElement userName() {
+        return driver.findElement(By.id("customer.username"));
+    }
     public WebElement password() {
-        return driver.findElement(By.cssSelector("#password"));
+        return driver.findElement(By.id("customer.password"));
     }
-
-    public WebElement city() {
-        return driver.findElement(By.cssSelector("#city"));
+    public WebElement confirm() {
+        return driver.findElement(By.id("repeatedPassword"));
     }
-
-    public WebElement customer() {
-        return driver.findElement(By.cssSelector("#customer"));
-
+    public WebElement registerButton() {
+        return driver.findElement(By.xpath("//*[@id=\"customerForm\"]/table/tbody/tr[13]/td[2]/input"));
     }
-
-    public WebElement trainer() {
-        return driver.findElement(By.cssSelector("#trainer"));
+    public WebElement singUpText(){
+        return driver.findElement(By.xpath("//*[@id=\"rightPanel\"]/h1"));
     }
-
-    public WebElement submit() {
-        return driver.findElement(By.cssSelector("#submit"));
+    public WebElement registerUserSuccessText(){
+        return driver.findElement(By.xpath("//*[@id=\"rightPanel\"]/p"));
     }
 }

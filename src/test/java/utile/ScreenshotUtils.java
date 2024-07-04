@@ -22,7 +22,7 @@ public class ScreenshotUtils {
 
         try {
             File screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-            String timeStamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
+            String timeStamp = new SimpleDateFormat("MMddHHmmss").format(new Date());
             String screenshotName = testName + "_" + timeStamp + ".png";
             String screenshotDirectory = "Screenshots";
 

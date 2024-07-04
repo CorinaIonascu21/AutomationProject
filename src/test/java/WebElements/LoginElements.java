@@ -10,23 +10,29 @@ public class LoginElements {
         this.driver = driver;
 
     }
-    public WebElement registerButton() {
-        return driver.findElement(By.className("register"));
-    }
-    public WebElement loginText() {
-        return driver.findElement(By.xpath("//h2"));// h2 este un locator
+   public WebElement clickRegisterButton() {
+       return driver.findElement(By.xpath("//*[@id=\"loginPanel\"]/p[2]/a"));
 
     }
-    public WebElement emailInput(){
-        return driver.findElement(By.cssSelector("#userEmail"));
+    public WebElement signInTitle() {
+        return driver.findElement(By.xpath("//*[@id=\"leftPanel\"]/h2\n"));
+    }
+    public WebElement clickLogoutButton() {
+        return driver.findElement(By.xpath("//*[@id=\"leftPanel\"]/ul/li[8]/a"));
+    }
+    public WebElement userName(){
+        return driver.findElement(By.name("username"));
 }
     public WebElement  passwordInput() {
-    return driver.findElement(By.cssSelector("#userPassword"));
+    return driver.findElement(By.name("password"));
     }
     public WebElement  loginButtonInput() {
-        return driver.findElement(By.id("submitButton"));
+        return driver.findElement(By.cssSelector("input[type='submit']"));
     }
-    public WebElement errorForbiddenAccess() {
-        return driver.findElement(By.cssSelector("errorForbiddenAccess"));
+   public WebElement errorLoginText() {
+        return driver.findElement(By.xpath("//*[@id=\"rightPanel\"]/h1"));
+    }
+    public WebElement signOutTitle(){
+        return driver.findElement(By.xpath("//*[@id=\"leftPanel\"]/h2"));
     }
 }
