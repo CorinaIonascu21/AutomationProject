@@ -22,7 +22,7 @@ private Wait<WebDriver> wait;
     }
 
     public void enterUserName(String userEmail) {
-
+        wait.until(d -> element.emailInput().isDisplayed());
         element.emailInput().sendKeys(userEmail);
     }
 

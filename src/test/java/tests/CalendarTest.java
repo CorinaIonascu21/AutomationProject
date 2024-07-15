@@ -4,26 +4,26 @@ import Actions.Dashboard;
 import Actions.Login;
 import Actions.Register;
 import Actions.Training;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import utile.BaseTest;
 import utile.ConfigLoader;
 
-public class TrainingProgram extends BaseTest {
+
+public class CalendarTest extends BaseTest {
+
     private Login login = null;
     private Dashboard dashboard = null;
     private Register register = null;
     private RegisterUser registerUser = null;
     private ConfigLoader configLoader;
+    private ConfigLoader configLoaderDate;
     private Training training;
     private String email = "";
     private String parola = "";
 
     @Test
-    public void openTrainingTab() {
+    public void openDashboard() {
         initTest("Training Program");
         login = new Login(driver);
         dashboard = new Dashboard(driver);
@@ -31,29 +31,23 @@ public class TrainingProgram extends BaseTest {
         registerUser = new RegisterUser();
         training = new Training(driver);
 
+
         configLoader = new ConfigLoader("src/test/resources/proprietati/dateUserCalendar.properties");
+        configLoaderDate = new ConfigLoader("src/test/resources/proprietati/dateData.properties");
+
         email = configLoader.getProperty("Email");
         parola = configLoader.getProperty("password");
 
-
         login();
-
-        dashboard.clickTrainingButton();
-
-        training.clickGenerateProgramButton();
-
-
-        training.dragAndDropTrainingProgram(configLoader.getProperty("weekDay"),
-                configLoader.getProperty("trainingProgram"));
-
-Assert.assertTrue(training.trainingProgramOnWeekday(configLoader.getProperty("weekDay") ,"legs").
-        equalsIgnoreCase("legs"));
-
+        dashboard.clickSpecificDay(configLoaderDate.getProperty("date"));
+        dashboard.sendEventText(configLoaderDate.getProperty("eventText"));
+        dashboard.clickCreateEventButton();
+        Assert.assertTrue(dashboard.isEventPresent(configLoaderDate.getProperty("eventText")));
     }
 
     private void login() {
 
-        loginActions(email,parola);
+        loginActions(email, parola);
 
         if (login.errorForbiddenAccessText()) {
             login.clickRegisterButton();
@@ -70,7 +64,8 @@ Assert.assertTrue(training.trainingProgramOnWeekday(configLoader.getProperty("we
         login.enterPassword(parola);
         login.clickSubmitButton();
     }
-
 }
+
+
 
 

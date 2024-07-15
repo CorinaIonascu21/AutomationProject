@@ -22,8 +22,8 @@ public class RegisterUser extends BaseTest {
 
         register.setFirstName("popa");//apelam metodele.actiunile
        register.setLastName("dan");
-        register.setEmail("dan@dan123.com");
-        register.setPhoneNumber("072345");
+        register.setEmail("dan@dan864.com");
+        register.setPhoneNumber("0123456");
         register.password("1234");
         register.city("Romania");
         if (isTrainer) {

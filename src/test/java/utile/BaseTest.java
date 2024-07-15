@@ -1,8 +1,10 @@
 package utile;
 
+import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -21,6 +23,7 @@ public class BaseTest {
     public WebDriver driver;//aici e null, driver e un obiect dintr-o clasa
     private ExtentTest extentTest;
     private ScreenshotUtils screenshotUtils;
+    private static ExtentReports extentReports;
 
     @BeforeClass//inainte sa fie rulata o clasa din proiect intra in metoda asta si face initializarile
     public void setupClass() {
@@ -31,6 +34,12 @@ public class BaseTest {
         driver = new ChromeDriver();//apelam instanta. iar aici driver devine true si dupa cand intra in if trb sa inchida
         screenshotUtils = new ScreenshotUtils(driver);
         driver.get("http://apptest.go.ro:9999/login");
+        driver.manage().window().maximize();
+        if(extentReports ==null){
+            extentReports = new ExtentReports();
+            ExtentSparkReporter sparkReporter = new ExtentSparkReporter("ExtentReports.html");
+            extentReports.attachReporter(sparkReporter);
+        }
     }
 
     @AfterClass

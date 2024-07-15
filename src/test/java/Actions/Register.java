@@ -62,11 +62,11 @@ public class Register {
     }
 
     public void registerUser(boolean isTrainer){
-        configLoader = new ConfigLoader("src/test/resources/proprietati/dateUser1.properties");
+        configLoader = new ConfigLoader("src/test/resources/proprietati/dateUserCalendar.properties");
         String firstName = configLoader.getProperty("firstName");
         String LastName = configLoader.getProperty("LastName");
-        String Email = configLoader.getProperty("Email");
-        String PhoneNumber = configLoader.getProperty("PhoneNumber");
+       String Email = configLoader.getProperty("Email");
+       String PhoneNumber = configLoader.getProperty("PhoneNumber");
         String password = configLoader.getProperty("password");
         String city = configLoader.getProperty("city");
 
