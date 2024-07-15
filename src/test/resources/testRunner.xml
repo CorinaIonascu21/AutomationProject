@@ -6,21 +6,33 @@
         </classes>
     </test>-->
 
-    <test name="Register User">
-         <classes>
-             <class name= "tests.RegisterUser"/>
-         </classes>
-     </test>
- <!-- <test name="Login Trainer">
-  <classes>
-   <class name= "tests.LoginTrainer"/>
-  </classes>
- </test>-->
+    <!--  <test name="Register User">
+           <classes>
+               <class name= "tests.RegisterUser"/>
+           </classes>
+       </test>-->
+   <!-- <test name="Login Trainer">
+    <classes>
+     <class name= "tests.LoginTrainer"/>
+    </classes>
+   </test>-->
 
  <!--<test name="Training Program">
   <classes>
    <class name= "tests.TrainingProgram"/>
   </classes>
  </test>-->
+ <!--  <test name="Calendar Action">
+<classes>
+ <class name= "tests.CalendarTest"/>
+</classes>
+</test>-->
+ <test name=" Cucumber Calendar Test">
+  <classes>
+   <class name= "runner.TestRunner"/>
+  </classes>
+ </test>
+
+
 
  </suite>

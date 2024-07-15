@@ -22,7 +22,7 @@ public class LoginTrainer extends BaseTest {
         dashboard = new Dashboard(driver);
         register = new Register(driver);
 
-        configLoader = new ConfigLoader("src/test/resources/proprietati/dateUser1.properties");
+        configLoader = new ConfigLoader("src/test/resources/proprietati/dateUserCalendar.properties");
         String Email = configLoader.getProperty("Email");
         String password = configLoader.getProperty("password");
 
